@@ -1,0 +1,43 @@
+* {
+  font-family: sans-serif;
+}
+h1 {
+  color: purple;
+}
+body {
+  padding-left: 5px;
+  color: white;
+  background-color: black;
+}
+#messagesBox {
+  border-radius: 20px;
+  padding-left: 15px;
+  width: 450px;
+  height: 400px;
+  overflow-y: auto;
+  color: white;
+  background-color: rgb(42, 42, 46);
+}
+
+#messageInput {
+  background-color: purple;
+  color: white;
+  display: inline-block;
+  padding: 15px 32px;
+  border-radius: 15px;
+  border: black;
+}
+
+button {
+  background-color: purple;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  padding: 15px 32px;
+  border-radius: 15px;
+  border: black;
+}
+
+button:hover {
+  background-color: rgba(128, 0, 128, 0.596);
+}
