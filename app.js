@@ -2,7 +2,10 @@ const messageInput = document.querySelector("#messageInput");
 const messageButton = document.querySelector("#messageButton");
 const messagesBox = document.querySelector("#messagesBox");
 const loginButton = document.querySelector("#loginButton");
-// const loginModal = document.querySelector("#loginModal");
+const usernameInput = document.querySelector("#usernameInput");
+const loginModal = document.getElementById("loginModal");
+usernameInput.value = "";
+usernameInput.focus();
 
 var username = "";
 
@@ -18,8 +21,11 @@ const sendMessage = function() {
 
 
 const loginUser = function() {
-  const usernameInput = document.querySelector("#usernameInput");
   username = usernameInput.value;
+  const message = document.createElement("p");
+  message.textContent = username + " has connected to the chat.";
+  messagesBox.appendChild(message);
+  messagesBox.scrollTop = messagesBox.scrollHeight;
 }
 
 messageInput.addEventListener('keypress', function(ev) {
@@ -36,6 +42,14 @@ messageButton.addEventListener('click', function() {
 
 loginButton.addEventListener('click', function() {
   loginUser();
-  const loginModal = document.getElementById("loginModal");
   loginModal.style.display = "none";
+  messageInput.focus();
 });
+
+usernameInput.addEventListener('keypress', function(ev) {
+  if (ev.key == "Enter") {
+    loginUser();
+    loginModal.style.display = "none";
+    messageInput.focus();
+  }
+})
